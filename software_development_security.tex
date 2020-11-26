@@ -19,8 +19,15 @@
 
 \providecommand{\keywords}[1]
 {
-  \small	
-  \textbf{\textit{Keywords -- }} #1
+    \small	
+    \textbf{\textit{Keywords -- }} #1
+}
+
+\hypersetup{
+    colorlinks = true,
+    urlcolor = blue,
+    linkcolor = blue,
+    citecolor = red
 }
 
 \begin{document}
@@ -155,11 +162,11 @@ Based on the steps described above, we may conclude that development security is
 
 In this section, we look at the three processes which are used to ensure the security during the SDLC. The focus is put on three forefront representatives, namely Microsoft's \textit{Security Development Lifecycle} (SDL) \cite{microsoft_sdl}, OWASP’s \textit{Comprehensive, Lightweight Application Security Process} (CLASP) \cite{owasp}, and McGraw' \textit{Touchpoints} \cite{mcgraw2004software}.
 
-In section \ref{sec:sdlc} we stated that the security issues are present in all phases of the SDLC. However, the construction of secure software is still largely a matter of guidelines, best practices, and undocumented expert knowledge in many companies. \cite{on_secure_software}
+In Section \ref{sec:sdlc} we stated that the security issues are present in all phases of the SDLC. However, the construction of secure software is still largely a matter of guidelines, best practices, and undocumented expert knowledge in many companies. \cite{on_secure_software}
 
 Several advances have been made in the definition of the process for secure software development by the major players in the field like Microsoft or OWASP. The information about the processes are taken from the \textit{Bart De Win's} paper \textit{On the secure software development process: CLASP, SDL and Touchpoints compared} \cite{on_secure_software}.
 
-\subsection{Security Development Lifecycle}
+\subsection{Security Development Lifecycle (SDL) \cite{on_secure_software}}
 
 In 2002, Microsoft made a commitment to follow the so-called ``trustworthy computing'' principle. As a result, the company defined the \textit{Security Development Lifecycle (SDL)}. SDL is a process definition that is composed of a set of activities, which complement Microsoft's development process. These activities are particularly aimed to address security issues during the development process. The following aspects characterize the process:
 
@@ -170,15 +177,116 @@ In 2002, Microsoft made a commitment to follow the so-called ``trustworthy compu
     \item Management perspective
 \end{enumerate}
 
-\subsubsection{Security as a Supporting Quality}
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{figures/sdl_steps.jpg}
+\caption{The seven phases of the Security Development Lifecycle Process \cite{sdl_wiki}}
+\label{fig:sdl_phases}
+\end{figure}
 
+\subsubsection{Security as Supporting Quality}
 
+The primary goal of SDL is to function as a supportive add-on to the software construction process. It reaches this functionality by increasing the quality of functionality-driven software. This is done by improving its security approach.
+
+Security activities are most often related to functionality-based construction activities. For example, threat modeling starts from architectural dependencies with the external systems. However, the architecture itself could, in fact, reduce such threats in the first place. The SDL defines many similar approaches to enrich the quality of the development security.
 
 \subsubsection{Well-defined Process}
 
+From Figure \ref{fig:sdl_phases}, we can see that SDL is well-organized into the phases similar to the SDLC described in Section \ref{sec:sdlc}. Although the stages are security-specific, it is straightforward to map them to standard software development phases -- in the section \ref{sec:sdlc} we concluded that security is often included in all steps of the SDLC.
+
+Furthermore, several activities have continuous characteristics. This includes threat modeling and education. Thus, the SDL process incorporates support for revising and improving intermediate results.
+
 \subsubsection{Good Guidance}
 
+SDL achieves good guidance by specifying the method that must be used to execute activities.  On average, these specifications are concrete and often somewhat pragmatic. For example, the attack surface reduction is guided by a flow chart. Another example can be threat modeling, which is described as a set of sub-processes. As a result, the execution of an activity is quite achievable, even for less experienced people.
+
 \subsubsection{Management Perspective}
+
+Often in the companies, we can observe that security as quality has to be managed in order to be realized in practice. SDL takes a management perspective for the description of many activities. This is a very convenient feature given the inherent complexity of the security.
+
+\subsection{Comprehensive, Lightweight Application Security Process (CLASP) \cite{on_secure_software}}
+
+CLASP is a \textit{lightweight} process for building secure software. It consists of 24 top-level activities, which are general enough to be tailored to the development process in progress. Some of the key features include:
+
+\begin{enumerate}
+    \item Security at the center stage
+    \item Limited structure
+    \item Role-based
+    \item Rich in resources
+\end{enumerate}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{figures/owasp_clasp.png}
+\caption{SDLC \& OWASP Guidelines \cite{owasp_clasp}}
+\label{fig:sdlc_owasp}
+\end{figure}
+
+\subsubsection{Security at Center Stage}
+
+As shown in Figure \ref{fig:sdlc_owasp}, the CLASP framework is mainly proposed for the construction of software in which security takes a central role. The set of activities is fairly broad since they are defined and conceived primarily from a security-theoretical perspective.
+
+\subsubsection{Limited Structure}
+
+CLASP framework offers a certain level of flexibility. It is achieved by the independence of the activities that have to be integrated into the development process and its operating environment. It is up to a particular company to choose the activities to be executed and choose the order of execution. Moreover, the execution frequency is specified per individual activity. The coordination and synchronization of the activities may thus not be straightforward. Besides, the CLASP framework defines two road maps ( ``legacy'' and ``greenfield''), which give some guidance on how to combine the activities into a coherent and ordered set.
+
+\subsubsection{Role-based}
+
+We already mentioned activities, which are the building blocks of the CLASP. The framework also consists of the roles responsible for the finalization and the quality of the results of an activity. These roles can also have a direct impact on the security approach. Roles are used as an additional perspective to structure the set of activities.
+
+\subsubsection{Rich in Resources}
+
+CLASP provides and an extensive set of security resources used as support in the implementation of the activities. For example, one of the resources is a list of 104 known security vulnerabilities in application source code.
+
+\subsection{Touchpoints \cite{on_secure_software}}
+
+Let's introduce Gary McGraw, the author of the \textit{Seven Touchpoints for Software Security}, first:\\
+
+\textit{``Gary McGraw is the CTO of \textit{Cigital, Inc.}, a software security and quality consulting firm providing services to some of the world's best-known companies for a decade. Dr. McGraw is a globally-recognized authority on software security-featured frequently as a keynote speaker at events coast-to-coast as well as internationally.''} \cite{mcgraw_software_security}
+
+Touchpoints describe a set of security best practices that come from the extensive industrial experience of McGraw. The best practices (activities) are grouped together in seven so-called touchpoints. Some of the aspects of Touchpoints include:
+
+\begin{enumerate}
+    \item Risk management
+    \item Black vs. white
+    \item Flexibility
+    \item Examples
+    \item Resources
+\end{enumerate}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{figures/touchpoints.png}
+\caption{Seven touchpoints (best practices) of software security \cite{mcgraw_software_security}}
+\label{fig:touchpoints}
+\end{figure}
+
+\subsubsection{Risk management}
+
+Risk management is an important part of software security. Touchpoints acknowledge its importance and try to bridge the gap by elaborating the \textit{Risk Management Framework (RMF)} that supports the Touchpoints activities.
+
+\subsubsection{Black vs. white}
+
+Touchpoints come with a mix of black-hat and white-hat activities. Both types are equal in the means of necessity. Black-hat activities aim for attacks, exploits, and breaking software -- penetration testing. On the other hand, white-hat activities are more constructive in nature. They cover design, control, and functionality -- code review.
+
+\subsubsection{Flexibility}
+
+Since the Touchpoints are formalized in the form of best practices, we can tailor them and use them for software that already undergoes development. Besides, the documentation provides prioritization of different touchpoints. Thus, the companies are able to gradually introduce the touchpoints, starting from the most important ones.
+
+\subsubsection{Examples}
+
+\subsubsection{Resources}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
