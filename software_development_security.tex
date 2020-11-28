@@ -159,7 +159,7 @@ Many companies prefer to automate the deployment phase. The automation may be co
 
 At this point, the product is developed and used in the field. However, the operation and maintenance phase is still important. In this step, the users discover and report bugs and security issues that weren't found during coding and testing. These errors need to be resolved, which may spawn new development cycles. \cite{sdlc_phoenix}
 
-Often, a part of this phase is also some form of service-level agreement (SLA) between the customer and provider. This agreement documents what services the provider will furnish and defines the service standards the provider is obligated to meet. This may also include security measures that will be taken by the service provider are defined. Typically, this includes the drafting and consensus on antipoaching, IT security, and nondisclosure agreements. \cite{sla}
+Often, a part of this phase is also some form of service-level agreement (SLA) between the customer and provider. This agreement documents what services the provider will furnish and defines the service standards the provider is obligated to meet. This may also include security measures that will be taken by the service provider. Typically, this includes the drafting and consensus on antipoaching, IT security, and nondisclosure agreements. \cite{sla}
 
 \subsection{SDLC Summary}
 
@@ -236,7 +236,7 @@ As shown in Figure \ref{fig:sdlc_owasp}, the CLASP framework is mainly proposed 
 
 \subsubsection{Limited Structure}
 
-CLASP framework offers a certain level of flexibility. It is achieved by the independence of the activities that have to be integrated into the development process and its operating environment. It is up to a particular company to choose the activities to be executed and choose the order of execution. Moreover, the execution frequency is specified per individual activity. The coordination and synchronization of the activities may thus not be straightforward. Besides, the CLASP framework defines two road maps ( ``legacy'' and ``greenfield''), which give some guidance on how to combine the activities into a coherent and ordered set.
+CLASP framework offers a certain level of flexibility. It is achieved by the independence of the activities that have to be integrated into the development process and its operating environment. It is up to a particular company to choose the activities to be executed and choose the order of execution. Moreover, the execution frequency is specified per individual activity. The coordination and synchronization of the activities may thus not be straightforward. Besides, the CLASP framework defines two road maps (``legacy'' and ``greenfield''), which give some guidance on how to combine the activities into a coherent and ordered set.
 
 \subsubsection{Role-based}
 
@@ -250,7 +250,7 @@ CLASP provides and an extensive set of security resources used as support in the
 
 Let's introduce Gary McGraw, the author of the \textit{Seven Touchpoints for Software Security}, first:\\
 
-\textit{``Gary McGraw is the CTO of \textit{Cigital, Inc.}, a software security and quality consulting firm providing services to some of the world's best-known companies for a decade. Dr. McGraw is a globally-recognized authority on software security-featured frequently as a keynote speaker at events coast-to-coast as well as internationally.''} \cite{mcgraw_software_security}
+\textit{``Gary McGraw is the CTO of \textit{Cigital, Inc.}, a software security and quality consulting firm providing services to some of the world's best-known companies for a decade. Dr. McGraw is a globally-recognized authority on software security-featured frequently as a keynote speaker at events coast-to-coast as well as internationally.''} \cite{mcgraw_software_security}\\
 
 Touchpoints describe a set of security best practices that come from the extensive industrial experience of McGraw. The best practices (activities) are grouped together in seven so-called touchpoints. Some of the aspects of Touchpoints include:
 
@@ -325,7 +325,7 @@ Davis et al. proposed the first set in the paper \textit{Processes for producing
 \label{fig:best_practices}
 \end{figure}
 
-The SDLC is divided into the so-called self-explanatory subgroups, i.e., software artifacts describing the activities performed during the phases. The practices mentioned above are afterward mapped to these artifacts.
+The SDLC is divided into the so-called self-explanatory subgroups, i.e., software artifacts describing the activities performed during the phases. The practices mentioned above are afterward mapped to these artifacts, as we can see in Figure \ref{fig:best_practices}.
 
 \subsection{Best Practices -- Set 2 \& 3}
 
@@ -360,13 +360,13 @@ The third and last set is proposed by \textit{David A. Wheeler} in the article \
     \item \textbf{Separate data and control} -- illegal or invalid execution may lead to the loss of important data.
     \item \textbf{Minimize privileges} -- we should carefully consider every permissions/privileges assignment and properly design the policies.
     \item \textbf{Minimize the functionality of a component} -- it is easier to find and fix possible security flaws in a system composed of smaller components than in a monolithic system.
-    \item \textbf{Configure safely and user safe defaults} -- we should make the initial system safe as it eases the potential reconfiguration in the future.
+    \item \textbf{Configure safely and use safe defaults} -- we should make the initial system safe as it eases the potential reconfiguration in the future.
     \item \textbf{Load initialization values safely} -- the system often loads these values to set the defaults. It relates to the previous point.
     \item \textbf{Fail safe} -- we should always define a straightforward and safe recovery process from an error.
     \item \textbf{Avoid race conditions} -- multi-threading and multi-processing should be handled carefully by the experienced developers.
     \item \textbf{Trust only trustworthy channels} -- always evaluate if the source of data is reliable and trustworthy.
     \item \textbf{Setup a trusted path} -- always evaluate a process path and look for the possible sources of errors to avoid the leakage of secure information.
-    \item \textbf{User internal consistency} -- this refers to the usage of coding standards and application of company policies during the development process.
+    \item \textbf{Use internal consistency} -- this refers to the usage of coding standards and application of company policies during the development process.
     \item \textbf{Self-limit resources} -- as abnormal termination may loose some information.
     \item \textbf{Prevent cross-site malicious content} -- avoid data from unreliable sources which may lead to the leakage of other users' data.
     \item \textbf{Foil semantic attacks} -- implement procedures to prevent social engineering on your users like phishing, etc.
