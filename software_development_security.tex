@@ -7,6 +7,7 @@
 \usepackage{float}
 \usepackage[margin=2.5cm]{geometry}
 \usepackage{hyperref}
+\usepackage{enumitem}
 
 \setmainlanguage{english}
 \addbibresource{bib/ref.bib}
@@ -80,10 +81,12 @@ Tomáš \textsc{PATRO}\\
 
 \begin{abstract}
 
-TODO ABSTRACT\\
+Software development security is an essential and fundamental part of developing a piece of software. The real-life industry projects' experiences show us that security is often a part of each phase of the Software Development Life Cycle (SDLC).
+
+In this article, we look at the SDLC definition and describe each phase of the process. We put each phase into the context of development security. Based on the knowledge about the SDLC, we look at the three different processes used by the major players in the industry. The aim of these processes is to formalize activities and approaches to develop the software securely. As an addition, in the last section, we talk about the best practices for software development security.\\
 
 \noindent
-\keywords{todo1, todo2}
+\keywords{software, security, development, sdlc, process, processes, application, management, risk, best, practices}
 \end{abstract}
 
 \tableofcontents
@@ -92,14 +95,18 @@ TODO ABSTRACT\\
 \section*{Introduction}
 \addcontentsline{toc}{section}{Introduction}
 
-TODO
+The software engineers pointed their fingers at the inability to handle the computer systems' complexity as early as 1968. It happened during the first software engineering conference organized by NATO. \cite{randell19961968} 
+
+The security during the development very much depends on the complexity of the overall system. The more complex the system is, the more we emphasize the importance of development security. However, the experience from the industry shows us that security during the development is often based on intuition and somewhat incomplete heuristics.
+
+In this article, we will look at the Software Development Life Cycle (SDLC) in the context of the development security. We will also acquaint the reader with two different approaches to enforce a secure development -- security process frameworks and usage of the best practices. Based on the gained information, these approaches show their potential and may apply to a lot of different software projects. However, it is also important to note that these are not the only viable options for development security. There are many other mechanisms on how to ensure development security; we will talk about only two of them.
 
 \newpage
 
 \section{Software Development Life Cycle (SDLC)}
 \label{sec:sdlc}
 
-In this section, we talk about the software development life cycle. It is a fundamental term in software engineering, and it is good first to gain a better knowledge of this process, so we can put it into the context of the development security.
+In this section, we will talk about the software development life cycle. It is a fundamental term in software engineering, and it is good first to gain a better knowledge of this process, so we can put it into the context of the development security.
 
 Every controlled process has some form of the life cycle, which determines the particular steps we take from the beginning to the end of the process. If we have a defined process, we can also define the resources and additional information connected to each step of the process. It is not different from the development of a piece of software.
 
@@ -159,8 +166,9 @@ Often, a part of this phase is also some form of service-level agreement (SLA) b
 Based on the steps described above, we may conclude that development security is included in all the SDLC steps (phases). We can ask ourselves the question of how to approach security in the development process. There may be many answers to this question. One possible solution may be to define a set of standards/processes that should be followed throughout the SDLC.
 
 \section{Secure Software Development Processes}
+\label{sec:ssdp}
 
-In this section, we look at the three processes which are used to ensure the security during the SDLC. The focus is put on three forefront representatives, namely Microsoft's \textit{Security Development Lifecycle} (SDL) \cite{microsoft_sdl}, OWASP’s \textit{Comprehensive, Lightweight Application Security Process} (CLASP) \cite{owasp}, and McGraw' \textit{Touchpoints} \cite{mcgraw2004software}.
+In this section, we will look at the three processes which are used to ensure the security during the SDLC. The focus is put on three forefront representatives, namely Microsoft's \textit{Security Development Lifecycle} (SDL) \cite{microsoft_sdl}, OWASP’s \textit{Comprehensive, Lightweight Application Security Process} (CLASP) \cite{owasp}, and McGraw' \textit{Touchpoints} \cite{mcgraw2004software}.
 
 In Section \ref{sec:sdlc} we stated that the security issues are present in all phases of the SDLC. However, the construction of secure software is still largely a matter of guidelines, best practices, and undocumented expert knowledge in many companies. \cite{on_secure_software}
 
@@ -180,7 +188,7 @@ In 2002, Microsoft made a commitment to follow the so-called ``trustworthy compu
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{figures/sdl_steps.jpg}
-\caption{The seven phases of the Security Development Lifecycle Process \cite{sdl_wiki}}
+\caption{The seven phases of the Security Development Lifecycle Process. \cite{sdl_wiki}}
 \label{fig:sdl_phases}
 \end{figure}
 
@@ -218,7 +226,7 @@ CLASP is a \textit{lightweight} process for building secure software. It consist
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{figures/owasp_clasp.png}
-\caption{SDLC \& OWASP Guidelines \cite{owasp_clasp}}
+\caption{SDLC \& OWASP Guidelines. \cite{owasp_clasp}}
 \label{fig:sdlc_owasp}
 \end{figure}
 
@@ -257,7 +265,7 @@ Touchpoints describe a set of security best practices that come from the extensi
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{figures/touchpoints.png}
-\caption{Seven touchpoints (best practices) of software security \cite{mcgraw_software_security}}
+\caption{Seven touchpoints (best practices) of software security. \cite{mcgraw_software_security}}
 \label{fig:touchpoints}
 \end{figure}
 
@@ -275,30 +283,115 @@ Since the Touchpoints are formalized in the form of best practices, we can tailo
 
 \subsubsection{Examples}
 
+Touchpoints bring lots of examples. For example, while describing the abuse cases, there is an example giving the reader a good feel about what they might look like in a particular situation.
+
 \subsubsection{Resources}
 
+Part of the Touchpoints is dedicated to security knowledge where resources are part of it. The resources further aid the execution of activities. Touchpoints provide references to resources and explain how to use them. For example, attack patterns are provided in order to be used in the elicitation of abuse cases.
 
+\subsection{Processes Conclusions}
 
+There is always a question about which process or methodology to use for your project. The answer is that it very much depends on a particular situation. We described three widely used processes and their main characteristics. If you want to know more and read about the comparison of these three processes, we recommend to read \textit{Bart De Win's} paper \textit{On the secure software development process: CLASP, SDL and Touchpoints compared} \cite{on_secure_software}. De Win and his colleagues summarized and compared these processes looking at a lot of different characteristics from education and awareness through release and deployment to support.
 
+\section{Software Development Security Best Practices}
+\label{sec:best_practices}
 
+This last section will look at a subset of the practical best practices for secure software development. We will look at the list of the best practices described by \textit{Ansar-Ul-Haque Yasar}, and his colleagues in the paper \textit{Best practices for software security: An overview} \cite{security_best_practices}. Yasar et al. made a list of the best practices from the different sources. Yasar et al. also state the following:\\
 
+\textit{``Software security spread covers the whole Software Development Life Cycle phases. Each of the phases should be carefully observed for building secure software.''\\}
 
+We can relate to this statement as we described it in Section \ref{sec:sdlc}. Yasar et al. chose three example sets of best practices and classified them based on the phases of the SDLC.
 
+\subsection{Best Practices -- Set 1}
 
+Davis et al. proposed the first set in the paper \textit{Processes for producing secure software} \cite{davis_secure_software}. The set is composed of these practices, which should be executed in this order:
 
+\begin{enumerate}[noitemsep]
+    \item Abuse cases
+    \item Security requirements
+    \item Risk analysis
+    \item External review
+    \item Risk-based security tests
+    \item Static analysis (tools)
+    \item Risk analysis
+    \item Penetration testing
+    \item Security breaks
+\end{enumerate}
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=.8\textwidth]{figures/best_practices.png}
+\caption{Best practices for the software security represented by software artifacts. \cite{davis_secure_software}}
+\label{fig:best_practices}
+\end{figure}
 
+The SDLC is divided into the so-called self-explanatory subgroups, i.e., software artifacts describing the activities performed during the phases. The practices mentioned above are afterward mapped to these artifacts.
 
+\subsection{Best Practices -- Set 2 \& 3}
 
+The other two sets are rather composed of straightforward recommendations. We will list them and add a simple explanation to each of them. The second set is proposed by \textit{Razvan Peteanu} in the paper \textit{Best Practices for Secure Development} \cite{razvan_best_practices}. Peteanu proposed high-level best practices for secure development:
 
+\begin{enumerate}
+    \item \textbf{Relevancy and weakest links} -- protect the related information and secure the places which may be more prone to attacks.
+    \item \textbf{Clarity} -- we should define every aspect of the solution we provide.
+    \item \textbf{Quality} -- the quality of security should be evenly maintained with the quality of the overall product.
+    \item \textbf{Involve all stakeholders} -- all relevant stakeholders should be involved in the security process (level of involvement should also be defined).
+    \item \textbf{Technology processes} -- the processes are related to each other, and there should be a technology able to invoke them.
+    \item \textbf{Fail safe operation} -- the product should be able to recover from the errors.
+    \item \textbf{Defense in depth} -- we should be able to implement defensive mechanisms in a multi-layered environment.
+    \item \textbf{Principle of appropriate privileges} -- everyone should be given privileges to operate the system accordingly considering the development phase and not only the final product.
+    \item \textbf{Interacting with users} -- related to the user testing phase. The users often find bugs in the product, and we should address these findings.
+    \item \textbf{Trust boundaries} -- we should define the trust boundaries to enforce a reliable security mechanism. For example, we can define a trusted computing base or a trusted path.
+    \item \textbf{Third-party software} -- at some point, we may use a third-party software. We should always be cautious when using vendors and potentially also test this software.
+    \item \textbf{Manipulation of sensitive data} -- this manipulation should be handled with proper care, and its security should be our top priority.
+    \item \textbf{Attack first on paper} -- if possible, it is a good recommendation to try breaking the security architecture during the design phase.
+    \item \textbf{Think ``outside of the box''} -- an important concept which tells us to always look for alternative approaches in points of views when testing and trying to break the product.
+    \item \textbf{Be humble} -- in the terms when we should continue improving the product even after the release.
+    \item \textbf{Declarative vs. programmatic} -- this is the most ``technical'' best practice. It tells us that security should be enforced in the programming either during the execution or outside the program control.
+    \item \textbf{Reviews are your best allies} -- also related to the programming. Code reviews should be an essential part of the coding process.
+\end{enumerate}
 
+The third and last set is proposed by \textit{David A. Wheeler} in the article \textit{Secure programming for Linux and Unix HOWTO}. This set is the most technical one and aimed mainly for the coding part:
 
+\begin{enumerate}
+    \item \textbf{Validate all input} -- every external and internal input to the system should be carefully handled.
+    \item \textbf{Avoid buffer overflow} -- we should be careful when working with data structures and not cause stack or heap overflow problems.
+    \item \textbf{Secure the interface} -- we should design the interface simple enough to understand it easily.
+    \item \textbf{Separate data and control} -- illegal or invalid execution may lead to the loss of important data.
+    \item \textbf{Minimize privileges} -- we should carefully consider every permissions/privileges assignment and properly design the policies.
+    \item \textbf{Minimize the functionality of a component} -- it is easier to find and fix possible security flaws in a system composed of smaller components than in a monolithic system.
+    \item \textbf{Configure safely and user safe defaults} -- we should make the initial system safe as it eases the potential reconfiguration in the future.
+    \item \textbf{Load initialization values safely} -- the system often loads these values to set the defaults. It relates to the previous point.
+    \item \textbf{Fail safe} -- we should always define a straightforward and safe recovery process from an error.
+    \item \textbf{Avoid race conditions} -- multi-threading and multi-processing should be handled carefully by the experienced developers.
+    \item \textbf{Trust only trustworthy channels} -- always evaluate if the source of data is reliable and trustworthy.
+    \item \textbf{Setup a trusted path} -- always evaluate a process path and look for the possible sources of errors to avoid the leakage of secure information.
+    \item \textbf{User internal consistency} -- this refers to the usage of coding standards and application of company policies during the development process.
+    \item \textbf{Self-limit resources} -- as abnormal termination may loose some information.
+    \item \textbf{Prevent cross-site malicious content} -- avoid data from unreliable sources which may lead to the leakage of other users' data.
+    \item \textbf{Foil semantic attacks} -- implement procedures to prevent social engineering on your users like phishing, etc.
+    \item \textbf{Be careful with data types} -- many bugs and security flaws are caused by invalid usage of data types.
+    \item \textbf{Carefully callout to other resources} -- some resources like library routines may require some additional system information to operate.
+    \item \textbf{Send information back judiciously} -- minimize feedback for unreliable users.
+\end{enumerate}
 
+The best practices we summarized in the article can be used as a guideline or a checkbox. The advantage of these recommendations is their flexibility and freedom to adapt them to a particular case. Based on the project's complexity and scope, you can use them as an addition to your security process framework or as a core guideline for your development process.
 
+\newpage
 
+\section*{Conclusion}
+\addcontentsline{toc}{section}{Conclusion}
 
+In the article, we first defined, in Section \ref{sec:sdlc}, the \textit{Software Development Life Cycle (SDLC)} as one of the fundamental parts of software engineering. We looked at the different steps (phases) of the cycle and briefly put them into the software development security context.
+
+The SDLC description aimed to acquire the reader with the life of the software and its different phases. This section's outcome should be the question of how to ensure the security of development in all phases of the SDLC.
+
+We addressed the question from the first section in the second one where we described three different security processes used in the software development, namely Microsoft's \textit{Security Development Lifecycle} (SDL) \cite{microsoft_sdl}, OWASP’s \textit{Comprehensive, Lightweight Application Security Process} (CLASP) \cite{owasp}, and McGraw' \textit{Touchpoints} \cite{mcgraw2004software}.
+
+In Section \ref{sec:ssdp}, we also described each of the processes' key characteristics and features. In Section \ref{sec:best_practices} we presented three different sets of security best practices. Each set looked at the security from a different level of abstraction. The article's overall purpose was to acquaint the user with the possible ways to ensure security during the development -- using the security process frameworks, security best practices, or combining them.
 
 \newpage
 \printbibliography
+\addcontentsline{toc}{section}{References}
 
 \end{document}
